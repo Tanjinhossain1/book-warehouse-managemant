@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import Books from '../Books/Books';
 import BookType from '../BookType/BookType';
+import Deals from '../Deals/Deals';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
                 <BookType></BookType>
             </div>
             <Books></Books>
+            <Deals></Deals>
         </div>
     );
 };

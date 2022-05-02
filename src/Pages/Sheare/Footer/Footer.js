@@ -16,7 +16,7 @@ const Footer = () => {
                 <div>
                     <h4 className='text-xl mb-4 text-gray-400'>ABOUT</h4>
                     <Link to='/about'>About Us</Link>
-                    <Link to='/blog'>Blog</Link>
+                    <Link className='block' to='/blog'>Blog</Link>
                     <p>Privacy Policy</p>
                     <p>Terms Of Services</p>
                 </div>
