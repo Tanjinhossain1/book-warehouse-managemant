@@ -1,0 +1,66 @@
+[
+    {
+        "name":"Harry Potter And Order Of The Phoenix",
+        "img": "https://i.ebayimg.com/images/g/PnYAAOSwd7Fb8lQM/s-l400.jpg",
+        "description": "The book that took the world by storm. In his fifth year at Hogwarts, Harry faces challenges at every turn and the meaning of sacrifice.",
+        "price":"25",
+        "quantity": 0,
+        "supplierName": "Arafat "
+    },
+    {
+        "name":"Stolen Time",
+        "img": "https://i.harperapps.com/covers/9780062679949/x450.jpg",
+        "description": "STOLEN TIME by Danielle Rollins is a twisty, YA time-travel romance set in both a past and futuristic Seattle where a con girl and young pilot.",
+        "price":"15",
+        "quantity": 0,
+        "supplierName": "Noman "
+    },
+    {
+        "name":"End Of The Point",
+        "img": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1362370799l/15818393.jpg",
+        "description": "An unforgettable portrait of one family's journey through the second half of the twentieth century, The End of the Point traces the fragile and enduring bonds that connect us.",
+        "price":"35",
+        "quantity": 0,
+        "supplierName": "Maria Akter"
+    },
+    {
+        "name":"Dog Man",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61aia1RqVrL.jpg",
+        "description": "Dog Man is a comedic graphic novel series by American author and cartoonist Dav Pilkey and published by Scholastic Corporation",
+        "price":"10",
+        "quantity": 0,
+        "supplierName": "TajUddin"
+    },
+    {
+        "name":"The Roster Bar",
+        "img": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1502153786l/34201164.jpg",
+        "description": " In The Rooster Bar by John Grisham, law school and student loan system that they believed had lied about their chances at profitable jobs.",
+        "price":"20",
+        "quantity": 0,
+        "supplierName": "Rakib"
+    },
+    {
+        "name":"The OverStory",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/81YgPnTNf5L.jpg",
+        "description": "The book is about nine Americans whose unique life experiences with trees bring them together to address the destruction of forests.",
+        "price":"13",
+        "quantity": 0,
+        "supplierName": "Manik Smaile"
+    },
+    {
+        "name":"Book Of Colours",
+        "img": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1515641680l/36524801._SY475_.jpg",
+        "description": "This is such an unusual book. It describes how colours are perceived by a blind child, and every page has lovely tactile illustrations. ",
+        "price":"8",
+        "quantity": 0,
+        "supplierName": ""
+    },
+    {
+        "name":"To Feel The Music",
+        "img": "https://m.media-amazon.com/images/I/51lg3WI2ISL.jpg",
+        "description": "In every respect, this is a book about the creation of authentic human artistic expression, and what happens to it after that point.",
+        "price":"30",
+        "quantity": 0,
+        "supplierName": "Alif Khan"
+    }
+]
