@@ -12,7 +12,7 @@ const Books = () => {
         <div>
             <div className='grid grid-cols-3'>
                 {
-                    books.map((book, index) => <Book book={book} key={index}></Book>)
+                    books.slice(0,6).map((book, index) => <Book book={book} key={index}></Book>)
                 }
             </div>
 
