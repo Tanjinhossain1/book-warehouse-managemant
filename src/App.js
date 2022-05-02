@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Sheare/Footer/Footer';
 import Header from './Pages/Sheare/Header/Header';
+import UpdateBook from './Pages/UpdateBook/UpdateBook';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
      <Routes>
        <Route path='/' element={<Home></Home>}></Route>
        <Route path='/home' element={<Home></Home>}></Route>
+       <Route path='/update/:id' element={<UpdateBook></UpdateBook>}></Route>
      </Routes>
       <Footer></Footer>
     </div>
