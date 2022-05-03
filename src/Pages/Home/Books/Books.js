@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useBooks from '../../../hooks/useBooks';
 import Book from '../Book/Book';
 
 const Books = () => {
-    const [books, setBooks] = useState([]);
+    const [books] = useBooks();
     const navigate = useNavigate()
-    useEffect(() => {
-        fetch('http://localhost:5000/books')
-            .then(res => res.json())
-            .then(data => setBooks(data))
-    }, [])
+  
     return (
         <div className='w-3/4 mx-auto'>
             <h1 className='ml-8 mt-12 text-blue-800 font-bold text-2xl'>Books Inventory</h1>

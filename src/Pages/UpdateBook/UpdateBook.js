@@ -35,21 +35,26 @@ const UpdateBook = () => {
 
     }
 
+
     const addQuantity = (event) => {
         event.preventDefault();
-      const  newQuantity = event.target.newQuantity.value;
-      const  addNewQuantity = +newQuantity + book.quantity;    
-        fetch(`http://localhost:5000/bookNewQuantity/${_id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ addNewQuantity })
-        })
-            .then(res => res.json())
-            .then(data =>{
-                book.quantity = addNewQuantity;
-                setBook({...book})
-                event.target.reset()
+        const newQuantity = event.target.newQuantity.value;
+        if (newQuantity > 0) {
+            const addNewQuantity = +newQuantity + book.quantity;
+            fetch(`http://localhost:5000/bookNewQuantity/${_id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ addNewQuantity })
             })
+                .then(res => res.json())
+                .then(data => {
+                    book.quantity = addNewQuantity;
+                    setBook({ ...book })
+                    event.target.reset()
+                })
+        } else {
+        alert('minus quantity are not allow')
+        }
     }
     return (
         <div>
@@ -60,7 +65,7 @@ const UpdateBook = () => {
                 <div className='p-4 '>
                     <h4 className='text-blue-800 text-xl  font-semibold'> {name}</h4>
                     <p>Price: <span className='text-pink-600 font-semibold'>{price}$</span></p>
-                    <p>Quantity: <span className=' font-bold'> { quantity }</span></p>
+                    <p>Quantity: <span className=' font-bold'> {quantity}</span></p>
                     <p>Description: <small>{description}</small></p>
                     <p><small>SupplierName: {supplierName}</small></p>
                     <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered</button>
@@ -72,7 +77,7 @@ const UpdateBook = () => {
                 </div>
             </div>
             <div className='justify-end w-3/4 flex mb-4'>
-                <Link to='/manageinventory'><button onClick={()=>navigate('manageinventory')} className='border text-2xl rounded-2xl py-3 px-8 bg-green-700 text-white font-bold'>Manage Inventories <FontAwesomeIcon className='text-2xl mt-1' icon={faArrowRightLong}></FontAwesomeIcon></button></Link>
+                <Link to='/manageinventory'><button onClick={() => navigate('manageinventory')} className='border text-2xl rounded-2xl py-3 px-8 bg-green-700 text-white font-bold'>Manage Inventories <FontAwesomeIcon className='text-2xl mt-1' icon={faArrowRightLong}></FontAwesomeIcon></button></Link>
             </div>
         </div>
     );
