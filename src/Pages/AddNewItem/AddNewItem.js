@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 const AddNewItem = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data,event) => {
         fetch('http://localhost:5000/books', {
             method: 'POST',
             headers: {
@@ -12,7 +12,7 @@ const AddNewItem = () => {
             body: JSON.stringify(data),
         })
         .then(res=>res.json())
-        .then(result=>console.log(result))
+        .then(result=>event.target.reset())
     };
     //   name, price, img, description, quantity, supplierName,
 
