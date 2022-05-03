@@ -15,14 +15,14 @@ const UpdateBook = () => {
     // console.log(number)
 
     const deleteQuantity = () => {
-    
+
         if (quantity > 0) {
             book.quantity = book.quantity - 1
             setBook({ ...book })
-            
+
         }
         const quantitys = book.quantity
-       
+
         fetch(`http://localhost:5000/books/${_id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -32,18 +32,21 @@ const UpdateBook = () => {
             .then(data => console.log(data))
 
     }
+
     const addQuantity = (event) => {
         event.preventDefault();
-        const newQuantity = event.target.newQuantity.value;
-        const addNewQuantity = +newQuantity + quantity;
-        // setNewQuantity(addNewQuantity)
+      const  newQuantity = event.target.newQuantity.value;
+      const  addNewQuantity = +newQuantity + book.quantity;    
         fetch(`http://localhost:5000/bookNewQuantity/${_id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({addNewQuantity})
+            body: JSON.stringify({ addNewQuantity })
         })
             .then(res => res.json())
-            .then(data => setBook({ ...book }))
+            .then(data =>{
+                book.quantity = addNewQuantity;
+                setBook({...book})
+            })
     }
     return (
         <div>
@@ -54,10 +57,10 @@ const UpdateBook = () => {
                 <div className='p-4 '>
                     <h4 className='text-blue-800 text-xl  font-semibold'> {name}</h4>
                     <p>Price: <span className='text-pink-600 font-semibold'>{price}$</span></p>
-                    <p>Quantity: <span className=' font-bold'> {quantity}</span></p>
+                    <p>Quantity: <span className=' font-bold'> { quantity }</span></p>
                     <p>Description: <small>{description}</small></p>
                     <p><small>SupplierName: {supplierName}</small></p>
-                    <button onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered</button>
+                    <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered</button>
                     <form onSubmit={addQuantity} className='mt-4'>
                         <input className='border py-1 rounded-l-lg' placeholder='Add Quantity' type="text" name='newQuantity' />
                         <input type="submit" className='border text-white px-2 rounded-r-lg bg-green-600 py-1' value="Add Quantity" />
