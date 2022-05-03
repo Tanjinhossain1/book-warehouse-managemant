@@ -3,7 +3,17 @@ import { useForm } from 'react-hook-form';
 
 const AddNewItem = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        fetch('http://localhost:5000/books', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(res=>res.json())
+        .then(result=>console.log(result))
+    };
     //   name, price, img, description, quantity, supplierName,
 
     return (
@@ -16,7 +26,7 @@ const AddNewItem = () => {
 
             <input className='mb-2 border p-1 rounded-lg' placeholder='Quantity' {...register("quantity", { required: true })} />
             {errors.quantity && <span className='text-red-600'>This field is required</span>}
-            
+
             <input className='mb-2 border p-1 rounded-lg' placeholder='SupplierName' {...register("supplierName", { required: true })} />
             {errors.supplierName && <span className='text-red-600'>This field is required</span>}
 
@@ -26,7 +36,7 @@ const AddNewItem = () => {
 
             <textarea className='mb-2 border p-1 rounded-lg' placeholder='Description' {...register("description", { required: true })} />
             {errors.description && <span className='text-red-600'>This field is required</span>}
- 
+
             <input type="submit" className='mb-2 border rounded-lg bg-blue-600 text-white font-semibold text-xl py-2 ' value='Add Item' />
         </form>
     );
