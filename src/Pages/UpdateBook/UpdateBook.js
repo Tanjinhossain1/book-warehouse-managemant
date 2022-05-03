@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 const UpdateBook = () => {
     const { id } = useParams();
     const [book, setBook] = useState({});
+    const navigate = useNavigate()
     const { name, price, img, description, quantity, supplierName, _id } = book;
     // console.log(books)
     useEffect(() => {
@@ -46,6 +48,7 @@ const UpdateBook = () => {
             .then(data =>{
                 book.quantity = addNewQuantity;
                 setBook({...book})
+                event.target.reset()
             })
     }
     return (
@@ -62,11 +65,14 @@ const UpdateBook = () => {
                     <p><small>SupplierName: {supplierName}</small></p>
                     <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered</button>
                     <form onSubmit={addQuantity} className='mt-4'>
-                        <input className='border py-1 rounded-l-lg' placeholder='Add Quantity' type="text" name='newQuantity' />
+                        <input className='border py-1 rounded-l-lg' placeholder='Add Quantity' type="number" name='newQuantity' />
                         <input type="submit" className='border text-white px-2 rounded-r-lg bg-green-600 py-1' value="Add Quantity" />
                     </form>
 
                 </div>
+            </div>
+            <div className='justify-end w-3/4 flex mb-4'>
+                <Link to='/manageinventory'><button onClick={()=>navigate('manageinventory')} className='border text-2xl rounded-2xl py-3 px-8 bg-green-700 text-white font-bold'>Manage Inventories <FontAwesomeIcon className='text-2xl mt-1' icon={faArrowRightLong}></FontAwesomeIcon></button></Link>
             </div>
         </div>
     );
