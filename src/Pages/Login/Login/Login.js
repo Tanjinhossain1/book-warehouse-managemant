@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Circles } from 'react-loader-spinner';
 
 const Login = () => {
-    const [email,setEmail] = useState('')
+    const [email, setEmail] = useState('');
+    const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
+
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth)
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate();
+    if (user || googleUser) {
+        navigate(from)
+    }
 
     const [open, setOpen] = useState(false);
     const handleLogin = (event) => {
@@ -23,11 +32,16 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
         // event.target.reset();
     }
-    const getEmail = (event) =>{
+    const getEmail = (event) => {
         setEmail(event.target.value)
     }
-    const resetPassword = ()=>{
+    const resetPassword = () => {
         sendPasswordResetEmail(email)
+    }
+    if (loading || googleLoading || sending) {
+        return <div className='text-center mt-32'>
+            <Circles color="#00BFFF" height={80} width={80} />
+        </div>
     }
     return (
         <div className=''>
@@ -56,7 +70,7 @@ const Login = () => {
                     <p className='ml-11'>or</p>
                     <hr />
                 </div>
-                <button className=''><img className='shadow-2xl rounded-full mt-4 hover:bg-black' src="https://i.ibb.co/x8NkjXG/images-1-removebg-preview.png" alt="" /></button>
+                <button onClick={() => signInWithGoogle()} className=''><img className='shadow-2xl rounded-full mt-4 hover:bg-black' src="https://i.ibb.co/x8NkjXG/images-1-removebg-preview.png" alt="" /></button>
             </div>
         </div>
     );
