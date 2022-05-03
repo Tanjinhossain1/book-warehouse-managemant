@@ -12,7 +12,7 @@ const Book = ({ book }) => {
             <div className='p-4 '>
                 <h4 className='text-blue-800 text-xl  font-semibold'> {name}</h4>
                 <p>Price: <span className='text-pink-600 font-semibold'>{price}$</span></p>
-                <p>Quantity: <span className=' font-bold'> {quantity}</span></p>
+                <p>Quantity: <span className='font-bold'> {quantity}</span></p>
                 <p>Description: <small>{description}</small></p>
                 <p>SupplierName: {supplierName}</p>
                 <button onClick={()=>navigate(`/update/${_id}`)} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-green-500 text-white'>Update</button>
