@@ -30,10 +30,10 @@ const AddNewItem = () => {
             {errors.name && <small className='text-red-600'>This field is required</small>}
 
 
-            <input className='mb-2 border p-1 rounded-lg' placeholder='Price' {...register("price", { required: true })} />
+            <input type='number' className='mb-2 border p-1 rounded-lg' placeholder='Price' {...register("price", { required: true })} />
             {errors.price && <small className='text-red-600'>This field is required</small>}
 
-            <input className='mb-2 border p-1 rounded-lg' placeholder='Quantity' {...register("quantity", { required: true })} />
+            <input type='number' className='mb-2 border p-1 rounded-lg' placeholder='Quantity' {...register("quantity", { required: true })} />
             {errors.quantity && <span className='text-red-600'>This field is required</span>}
 
             <input className='mb-2 border p-1 rounded-lg' placeholder='SupplierName' {...register("supplierName", { required: true })} />

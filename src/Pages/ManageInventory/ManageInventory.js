@@ -5,7 +5,7 @@ import Book from '../Home/Book/Book';
 
 const ManageInventory = () => {
     const [books, setBooks] = useBooks();
-    const DeleteBooks = (id) => {
+    const deleteBooks = (id) => {
         console.log(id)
         const confirmDelete = window.confirm('Are You Sure To Delete It.')
         if(confirmDelete){
@@ -27,7 +27,7 @@ const ManageInventory = () => {
             <Link className='border py-2 px-6 ml-6 rounded-full text-white bg-green-800' to='/addnewitem'>Add New Item</Link>
             <div className='grid grid-cols-4 '>
                 {
-                    books.map((book) => <Book book={book} key={book._id}><button onClick={() => DeleteBooks(book._id)} className='py-3 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 mt-4 text-white'>Delete</button></Book>)
+                    books.map((book) => <Book book={book} key={book._id}><button onClick={() => deleteBooks(book._id)} className='py-3 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 mt-4 text-white'>Delete</button></Book>)
                 }
             </div>
 
