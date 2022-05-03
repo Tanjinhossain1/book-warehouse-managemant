@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Book from '../Book/Book';
 
 const Books = () => {
     const [books, setBooks] = useState([]);
+    const navigate = useNavigate()
     useEffect(() => {
         fetch('http://localhost:5000/books')
             .then(res => res.json())
@@ -13,7 +15,7 @@ const Books = () => {
             <h1 className='ml-8 mt-12 text-blue-800 font-bold text-2xl'>Books Inventory</h1>
             <div className='grid grid-cols-3'>
                 {
-                    books.slice(0,6).map((book) => <Book book={book} key={book._id}><button className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-green-500 text-white'>Update</button> </Book>)
+                    books.slice(0,6).map((book) => <Book book={book} key={book._id}><button className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-green-500 text-white'  onClick={()=>navigate(`/update/${book._id}`)}>Update</button> </Book>)
                 }
             </div>
 

@@ -1,9 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Book = ({ book,children }) => {
     const { name, price, img, description, quantity, supplierName,_id } = book;
-    const navigate = useNavigate()
     return (
         <div className='m-6 border rounded-lg  shadow-lg hover:shadow-2xl'>
             <div className='flex justify-center'>
@@ -15,7 +13,7 @@ const Book = ({ book,children }) => {
                 <p>Quantity: <span className='font-bold'> {quantity}</span></p>
                 <p>Description: <small>{description}</small></p>
                 <p>SupplierName: {supplierName}</p>
-                <button onClick={()=>navigate(`/update/${_id}`)}>{children}</button>
+                <button>{children}</button>
             </div>
         </div>
     );
