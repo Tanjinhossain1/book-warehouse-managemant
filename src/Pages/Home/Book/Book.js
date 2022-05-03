@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Book = ({ book }) => {
+const Book = ({ book,children }) => {
     const { name, price, img, description, quantity, supplierName,_id } = book;
     const navigate = useNavigate()
     return (
@@ -15,7 +15,7 @@ const Book = ({ book }) => {
                 <p>Quantity: <span className='font-bold'> {quantity}</span></p>
                 <p>Description: <small>{description}</small></p>
                 <p>SupplierName: {supplierName}</p>
-                <button onClick={()=>navigate(`/update/${_id}`)} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-green-500 text-white'>Update</button>
+                <button onClick={()=>navigate(`/update/${_id}`)}>{children}</button>
             </div>
         </div>
     );
