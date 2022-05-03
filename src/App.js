@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import SignUp from './Pages/Login/SignUp/SignUp';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import MyItems from './Pages/MyItems/MyItems';
 import Footer from './Pages/Sheare/Footer/Footer';
 import Header from './Pages/Sheare/Header/Header';
 import UpdateBook from './Pages/UpdateBook/UpdateBook';
@@ -21,6 +22,7 @@ function App() {
        <Route path='/manageinventory' element={<ManageInventory></ManageInventory>}></Route>
        <Route path='/addnewitem' element={<AddNewItem></AddNewItem>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>
+       <Route path='/myitems' element={<MyItems></MyItems>}></Route>
        <Route path='/signup' element={<SignUp></SignUp>}></Route>
      </Routes>
       <Footer></Footer>

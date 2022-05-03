@@ -1,9 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const AddNewItem = () => {
+    const [user] = useAuthState(auth);
+    console.log(user?.email)
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = (data,event) => {
+    const onSubmit = (data, event) => {
+        console.log(data)
         fetch('http://localhost:5000/books', {
             method: 'POST',
             headers: {
@@ -11,15 +17,18 @@ const AddNewItem = () => {
             },
             body: JSON.stringify(data),
         })
-        .then(res=>res.json())
-        .then(result=>event.target.reset())
+            .then(res => res.json())
+            .then(result => event.target.reset())
     };
     //   name, price, img, description, quantity, supplierName,
 
     return (
         <form className='flex flex-col w-1/4 mx-auto mt-6' onSubmit={handleSubmit(onSubmit)}>
+            <input className='mb-2 border p-1 rounded-lg'  defaultValue={user?.email}  {...register("email")} />
+
             <input className='mb-2 border p-1 rounded-lg' placeholder='Name' {...register("name", { required: true })} />
             {errors.name && <small className='text-red-600'>This field is required</small>}
+
 
             <input className='mb-2 border p-1 rounded-lg' placeholder='Price' {...register("price", { required: true })} />
             {errors.price && <small className='text-red-600'>This field is required</small>}
