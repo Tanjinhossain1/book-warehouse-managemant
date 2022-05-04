@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+# Book-Warehouse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This project was create for book warehouse and have more feature you add your own book, delete book or update your book and you set your book quantity also.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Website feature
+1. This site make for a book inventory so site have more feature. So home page have a banner, books type, some book collection , discount deal section or footer.
+2. Book Collection have a unicqe update button when click update button then go a then go specifiqe book page and then you delevert quantity or have a quantity .
+ update form.
+ 3. quantity form set the number of quantity then click add quantity or your quantity is update. or this page have a manageInventory button.
+4. When You click manageInventory button then go manage page this page show all book collection and every book collection have a delete button and you delete the single book.
+5. and manage page have a add new button when you click it then go another page and they have take some information for the book when you fill the information then click add item so your item is added the page.
+6. This site have sign up or login page or have a my-item page. this page have only your added item  showing this page and every items have delete button if you nedd then you delete it.
+ 7. Blog page have a some quastion or ansuwer and add toast or email verifiaction, spinner, forgot password or password feild add a eye when you click it thne you see your password when you write it. 
+8. when you need to create the user then go sign up page and create you email and pass or if needed you sign in your google email id also.
