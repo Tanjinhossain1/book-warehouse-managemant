@@ -51,7 +51,7 @@ const Login = () => {
     }
     return (
         <div className=''>
-            <div className='w-1/4 mx-auto border-2 border-purple-800 rounded-lg p-4 my-5'>
+            <div className='lg:w-1/4  md:w-3/4 w-3/4 sm:w-3/4 mx-auto border-2 border-purple-800 rounded-lg p-4 my-5'>
                 <div>
                     <h1 className='text-2xl mb-4 font-semibold'>Login</h1>
 
@@ -61,7 +61,7 @@ const Login = () => {
                     <div className='flex flex-col mt-2 relative'>
                         <input className='border  px-1 py-1 w-4/4 ' type={`${open ? 'text' : 'password'}`} name="password" placeholder={`Password `} id="" required />
 
-                        {open ? <FontAwesomeIcon onClick={() => setOpen(!open)} className='absolute ml-[316px] mt-2 ' icon={faEye} /> : <FontAwesomeIcon onClick={() => setOpen(!open)} className='absolute ml-[316px] mt-2 ' icon={faEyeSlash} />}
+                        {open ? <FontAwesomeIcon onClick={() => setOpen(!open)} className='absolute lg:ml-[316px] mt-2 ' icon={faEye} /> : <FontAwesomeIcon onClick={() => setOpen(!open)} className='absolute lg:ml-[316px] eyeSmall ml-[365px] sm:ml-[400px] mt-2 ' icon={faEyeSlash} />}
                     </div>
 
                     <button onClick={resetPassword} className='flex justify-end text-purple-700 font-semibold mb-4'>Forgot Password?</button>

@@ -23,7 +23,7 @@ const AddNewItem = () => {
     //   name, price, img, description, quantity, supplierName,
 
     return (
-        <form className='flex flex-col w-1/4 mx-auto mt-6' onSubmit={handleSubmit(onSubmit)}>
+        <form className='flex flex-col md:w-2/4 sm:w-3/4 w-3/4 lg:w-2/4 mx-auto mt-6' onSubmit={handleSubmit(onSubmit)}>
             <input className='mb-2 border p-1 rounded-lg'  defaultValue={user?.email}  {...register("email")} />
 
             <input className='mb-2 border p-1 rounded-lg' placeholder='Name' {...register("name", { required: true })} />

@@ -14,12 +14,78 @@
 .round {
   border-radius: 0 0 150% 150%/0 0 50% 50%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 950px) {
+  .eyeSmall{
+    margin-left: 600px;
   }
 }
+@media only screen and (max-width: 900px) {
+  .eyeSmall{
+    margin-left: 580px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .eyeSmall{
+    margin-left: 540px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .eyeSmall{
+    margin-left: 500px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .eyeSmall{
+    margin-left: 460px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .eyeSmall{
+    margin-left: 420px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .eyeSmall{
+    margin-left: 390px;
+  }
+}
+
+@media only screen and (max-width: 565px) {
+  .eyeSmall{
+    margin-left: 355px;
+  }
+}
+@media only screen and (max-width: 545px) {
+  .eyeSmall{
+    margin-left: 325px;
+  }
+}
+@media only screen and (max-width: 516px) {
+  .eyeSmall{
+    margin-left: 300px;
+  }
+}
+@media only screen and (max-width: 483px) {
+  .eyeSmall{
+    margin-left: 290px;
+  }
+}
+@media only screen and (max-width: 469px) {
+  .eyeSmall{
+    margin-left: 270px;
+  }
+}
+@media only screen and (max-width: 442px) {
+  .eyeSmall{
+    margin-left: 250px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .eyeSmall{
+    margin-left: 220px;
+  }
+}
+
 
 @media only screen and (max-width: 639px) {
   .navColor {

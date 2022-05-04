@@ -20,7 +20,7 @@ const Header = () => {
             <div>
                         <h1 className='text-4xl mt-1 sm:text-white lg:text-black font-semibold '>Book-Warehouse</h1>
                     </div>
-            <div onClick={() => setNavOpen(!navOpen)} className='lg:hidden  '>
+            <div onClick={() => setNavOpen(!navOpen)} className='lg:hidden  sm:text-white'>
                 {!navOpen ? <FontAwesomeIcon className=' w-10 h-10' icon={faBars} /> : <FontAwesomeIcon className=' w-10 h-10 ' icon={faXmark} />}
 
                 </div>
@@ -29,7 +29,7 @@ const Header = () => {
             <div  >
               
 
-                <ul className={`lg:flex mt-2 navText sm:bg-[#056964] lg:text-black sm:text-white lg:bg-transparent justify-center lg:static absolute w-full text-center duration-700 ease-in ${navOpen ? 'top-11' : 'top-[-200px]'}`}>
+                <ul className={`lg:flex mt-2 navText sm:bg-[#056964] lg:text-black  sm:text-white lg:bg-transparent justify-center lg:static absolute w-full text-center duration-700 ease-in ${navOpen ? 'top-11' : 'top-[-200px]'}`}>
 
                     <NavLink className={({ isActive }) => isActive ? 'text-red-500 border-b-4 block border-red-500 mx-4' : 'mx-4  border-b-4 border-b-white block hover:text-orange-600 hover:border-orange-600'} to='/home'>Home</NavLink>
 
