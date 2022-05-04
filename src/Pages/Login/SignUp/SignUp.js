@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Triangle } from 'react-loader-spinner';
 
 const SignUp = () => {
@@ -12,7 +12,8 @@ const SignUp = () => {
     const [passError, setPassError] = useState('');
     const [updateProfile, updating,] = useUpdateProfile(auth);
     const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
-
+    const [sendEmailVerification] = useSendEmailVerification(auth);
+  
     const [
         createUserWithEmailAndPassword,
         user,
@@ -22,10 +23,7 @@ const SignUp = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
-    if (user || googleUser) {
-        navigate(from)
-    }
-
+  
     const handleSignUp = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -36,17 +34,23 @@ const SignUp = () => {
         if (password === confirmPassword) {
             await createUserWithEmailAndPassword(email, password)
             await updateProfile({displayName: name});
-            event.target.reset()
+            await sendEmailVerification();
+            event.target.reset();
         } else {
             setPassError('Password Not Match')
         }
 
     }
     if (loading || googleLoading || updating) {
-        return <div className='text-center mt-32'>
+        return <div className='flex justify-center my-32'>
             <Triangle color="#00BFFF" height={80} width={80} />
         </div>
     }
+ 
+    if (user || googleUser) {
+        navigate(from)
+    }
+
     return (
         <div className=''>
             <div className='w-1/4 mx-auto border-2 border-green-500 rounded-lg p-4 my-5'>

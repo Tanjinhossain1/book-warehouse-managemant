@@ -9,6 +9,8 @@ const Header = () => {
     const logout = () => {
         signOut(auth);
     };
+
+  
     return (
         <div>
             <nav className='flex justify-around bg-[#f6eee0] py-2'>

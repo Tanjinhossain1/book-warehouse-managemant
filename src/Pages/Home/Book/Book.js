@@ -3,7 +3,7 @@ import React from 'react';
 const Book = ({ book,children }) => {
     const { name, price, img, description, quantity, supplierName,_id } = book;
     return (
-        <div className='m-6 border rounded-lg  shadow-lg hover:shadow-2xl'>
+        <div className='mt-16 mx-6 mb-6 hover:bottom-10  relative border rounded-lg  shadow-lg hover:shadow-2xl'>
             <div className='flex justify-center'>
                 <img className='w-[100%] h-[450px] rounded-t-lg hover:shadow-2xl' src={img} alt="" />
             </div>

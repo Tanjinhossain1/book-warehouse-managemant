@@ -5,10 +5,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Circles } from 'react-loader-spinner';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [email, setEmail] = useState('');
-    const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading,googleError] = useSignInWithGoogle(auth);
 
     const [
         signInWithEmailAndPassword,
@@ -36,10 +37,15 @@ const Login = () => {
         setEmail(event.target.value)
     }
     const resetPassword = () => {
-        sendPasswordResetEmail(email)
+        if(email){
+            sendPasswordResetEmail(email)
+            toast('Reset Password Send Your Email')
+        }else{
+           toast('Enter Email First')
+        }
     }
     if (loading || googleLoading || sending) {
-        return <div className='text-center mt-32'>
+        return <div className='flex justify-center my-32'>
             <Circles color="#00BFFF" height={80} width={80} />
         </div>
     }
@@ -61,7 +67,8 @@ const Login = () => {
                     <button onClick={resetPassword} className='flex justify-end text-purple-700 font-semibold mb-4'>Forgot Password?</button>
 
 
-                    {error?.message.slice(23, 42)}
+                    {error?.message.slice(22, 42)}
+                    {googleError?.message}
                     <input className=' shadow-style bg-purple-700 rounded-full w-3/4 mx-auto text-white font-semibold py-2 hover:text-black border-0 hover:bg-white' type="submit" value="Login" />
                 </form>
                 <p>Don't Have An Account? <Link className='text-purple-700 font-semibold' to='/signup'>Create Account</Link></p>

@@ -8,7 +8,9 @@ const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth)
     let location = useLocation();
     if (loading) {
-        return <BallTriangle color="#00BFFF" height={80} width={80} />
+        return <div className='flex justify-center my-32'> 
+        <BallTriangle color="#00BFFF" height={80} width={80} />
+        </div>
     }
     if (!user) {
         return <Navigate to="/login" state={{ from: location }} replace />;
