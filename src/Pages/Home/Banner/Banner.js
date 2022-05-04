@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='bg-[#f6eee0]  round relative'>
+        <div className='bg-[#f6eee0]  round '>
             <div className='pt-12 w-3/4 mx-auto lg:flex items-center'>
                 <div className='w-3/4 '>
                     <h1 className='text-blue-900 text-4xl font-semibold'>2022 Reading Challenge</h1>

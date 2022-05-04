@@ -17,6 +17,19 @@
   }
 }
 
+@media only screen and (max-width: 470px){
+  .navPages{
+    text-align: center;
+  }
+  .navTransform{
+   
+  }
+}
+@media only screen and (min-width: 470px) and (max-width: 1023px){
+  .smNavPage{
+    text-align: center;
+  }
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
