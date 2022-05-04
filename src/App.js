@@ -7,6 +7,7 @@ import Login from './Pages/Login/Login/Login';
 import SignUp from './Pages/Login/SignUp/SignUp';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import MyItems from './Pages/MyItems/MyItems';
+import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Sheare/Footer/Footer';
 import Header from './Pages/Sheare/Header/Header';
 import UpdateBook from './Pages/UpdateBook/UpdateBook';
@@ -26,6 +27,7 @@ function App() {
        <Route path='/myitems' element={<MyItems></MyItems>}></Route>
        <Route path='/signup' element={<SignUp></SignUp>}></Route>
        <Route path='/blog' element={<Blog></Blog>}></Route>
+       <Route path='*' element={<NotFound></NotFound>}></Route>
      </Routes>
       <Footer></Footer>
     </div>
