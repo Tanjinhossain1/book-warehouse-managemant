@@ -1,35 +1,46 @@
 .App {
   text-align: center;
 }
-.shadow-style{
+
+.shadow-style {
   box-shadow: 1px 4px 10px 1px rgb(156, 12, 234);
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-.round{
+
+.round {
   border-radius: 0 0 150% 150%/0 0 50% 50%;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-@media only screen and (max-width: 470px){
-  .navPages{
+@media only screen and (max-width: 639px) {
+  .navColor {
+    background-color: #056964;
+    color: white;
+  }
+
+  .navText {
+    background-color: #056964;
+    color: white;
+  }
+
+  .bookType {
     text-align: center;
   }
-  .navTransform{
-   
+
+  .books {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-@media only screen and (min-width: 470px) and (max-width: 1023px){
-  .smNavPage{
-    text-align: center;
-  }
-}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -49,6 +60,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
