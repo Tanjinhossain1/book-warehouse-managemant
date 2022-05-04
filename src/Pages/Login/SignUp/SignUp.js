@@ -1,9 +1,10 @@
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { Triangle } from 'react-loader-spinner';
 
 const SignUp = () => {
     const [open, setOpen] = useState(false);
@@ -18,8 +19,12 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-
-    console.log(user)
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate();
+    if (user || googleUser) {
+        navigate(from)
+    }
 
     const handleSignUp = async (event) => {
         event.preventDefault();
@@ -36,6 +41,11 @@ const SignUp = () => {
             setPassError('Password Not Match')
         }
 
+    }
+    if (loading || googleLoading || updating) {
+        return <div className='text-center mt-32'>
+            <Triangle color="#00BFFF" height={80} width={80} />
+        </div>
     }
     return (
         <div className=''>

@@ -16,12 +16,14 @@ const Header = () => {
                     <h1 className='text-4xl'>Book-Warehouse</h1>
                 </div>
                 <div className='text-xl mt-2'>
-                    <NavLink  className={({isActive})=>isActive?'text-red-500 mx-4': 'mx-4'} to='/home'>Home</NavLink>
-                    {user && <NavLink className={({isActive})=>isActive?'text-red-500 mx-4': 'mx-4'} to='/addnewitem'>AddItem</NavLink>}
-                    {user && <NavLink className={({isActive})=>isActive?'text-red-500 mx-4': 'mx-4'} to='/manageinventory'>ManageItems</NavLink>}
-                    {user && <NavLink className={({isActive})=>isActive?'text-red-500 mx-4': 'mx-4'} to='/myitems'>MYItems</NavLink>}
+                    <NavLink  className={({isActive})=>isActive?'text-red-500 border-b-4 border-red-500 mx-4': 'mx-4  border-b-4 border-b-white hover:text-orange-600 hover:border-orange-600'} to='/home'>Home</NavLink>
+                    {user && <NavLink className={({isActive})=>isActive?'text-red-500 border-b-4 border-red-500 mx-4': 'mx-4  border-b-4 border-b-white hover:text-orange-600 hover:border-orange-600'} to='/addnewitem'>AddItem</NavLink>}
 
-                    <NavLink className={({isActive})=>isActive?'text-red-500 mx-4': 'mx-4'} to='/blog'>Blog</NavLink>
+                    {user && <NavLink className={({isActive})=>isActive?'text-red-500 border-b-4 border-red-500 mx-4': 'mx-4  border-b-4 border-b-white hover:text-orange-600 hover:border-orange-600'} to='/manageinventory'>ManageItems</NavLink>}
+
+                    {user && <NavLink className={({isActive})=>isActive?'text-red-500 border-b-4 border-red-500 mx-4': 'mx-4  border-b-4 border-b-white hover:text-orange-600 hover:border-orange-600'} to='/myitems'>MYItems</NavLink>}
+
+                    <NavLink className={({isActive})=>isActive?'text-red-500 border-b-4 border-red-500 mx-4': 'mx-4  border-b-4 border-b-white hover:text-orange-600 hover:border-orange-600'} to='/blog'>Blog</NavLink>
                     {
                         user ? <button onClick={() => logout()}>Log Out</button> : <Link to='/login'>Login</Link>
                     }
