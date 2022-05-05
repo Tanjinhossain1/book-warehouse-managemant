@@ -24,7 +24,7 @@ const AddNewItem = () => {
 
     return (
         <form className='flex flex-col md:w-2/4 sm:w-3/4 w-3/4 lg:w-2/4 mx-auto mt-6' onSubmit={handleSubmit(onSubmit)}>
-            <input className='mb-2 border p-1 rounded-lg'  defaultValue={user?.email}  {...register("email")} />
+            <input className='mb-2 border p-1 rounded-lg' defaultValue={user?.email}  {...register("email")} />
 
             <input className='mb-2 border p-1 rounded-lg' placeholder='Name' {...register("name", { required: true })} />
             {errors.name && <small className='text-red-600'>This field is required</small>}
@@ -46,7 +46,8 @@ const AddNewItem = () => {
             <textarea className='mb-2 border p-1 rounded-lg' placeholder='Description' {...register("description", { required: true })} />
             {errors.description && <span className='text-red-600'>This field is required</span>}
 
-            <input type="submit" className='mb-2 border rounded-lg bg-blue-600 text-white font-semibold text-xl py-2 ' value='Add Item' />
+            <input type="submit" className='mb-2 border  rounded-lg bg-blue-600 text-white font-semibold text-xl py-2  hover:bg-purple-500 hover:border-gray-600 duration-700 ease-in hover:text-black hover:font-semibold' value='Add Item' />
+           
         </form>
     );
 };

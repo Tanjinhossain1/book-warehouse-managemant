@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightLong, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
 const UpdateBook = () => {
     const { id } = useParams();
     const [book, setBook] = useState({});
@@ -68,10 +68,10 @@ const UpdateBook = () => {
                     <p>Quantity: <span className=' font-bold'> {quantity}</span></p>
                     <p>Description: <small>{description}</small></p>
                     <p><small>SupplierName: {supplierName}</small></p>
-                    <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered</button>
+                    <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered <FontAwesomeIcon icon={faCircleMinus}/></button>
                     <form onSubmit={addQuantity} className='mt-4'>
                         <input className='border py-1 rounded-l-lg' placeholder='Add Quantity' type="number" name='newQuantity' />
-                        <input type="submit" className='border text-white px-2 rounded-r-lg bg-green-600 py-1' value="Restock Item" />
+                        <input type="submit" className='border text-white px-2 rounded-r-lg bg-green-600 py-1' value='Restock Item' />
                     </form>
 
                 </div>

@@ -1,4 +1,4 @@
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
@@ -41,7 +41,7 @@ const Header = () => {
 
                     <NavLink className={({ isActive }) => isActive ? 'text-red-500 border-b-4 border-red-500 mx-4 block' : 'mx-4 block  border-b-4 border-b-white hover:text-orange-600 hover:border-orange-600'} to='/blog'>Blog</NavLink>
                     {
-                        user ? <button className='ml-3 border rounded-full bg-blue-500  px-4 font-semibold text-white hover:border-blue-700 hover:bg-white hover:text-black' onClick={() => logout()}>Log Out</button> : <Link to='/login'>Login</Link>
+                        user ? <button className='ml-3 border rounded-full bg-blue-500  px-4 font-semibold text-white hover:border-blue-700 hover:bg-white hover:text-black' onClick={() => logout()}>Log Out <FontAwesomeIcon icon={faArrowRightFromBracket}/></button> : <Link to='/login'>Login</Link>
                     }
 
                 </ul>
