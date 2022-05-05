@@ -14,6 +14,41 @@
 .round {
   border-radius: 0 0 150% 150%/0 0 50% 50%;
 }
+@media only screen and (max-width: 1535px) {
+  .eyeSmall{
+    margin-left: 650px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .eyeSmall{
+    margin-left: 585px;
+  }
+}
+@media only screen and (max-width: 1293px) {
+  .eyeSmall{
+    margin-left: 495px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .eyeSmall{
+    margin-left: 485px;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .eyeSmall{
+    margin-left: 455px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .eyeSmall{
+    margin-left: 680px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .eyeSmall{
+    margin-left: 630px;
+  }
+}
 @media only screen and (max-width: 950px) {
   .eyeSmall{
     margin-left: 600px;
@@ -50,7 +85,7 @@
   }
 }
 
-@media only screen and (max-width: 565px) {
+@media only screen and (max-width: 600px) {
   .eyeSmall{
     margin-left: 355px;
   }
