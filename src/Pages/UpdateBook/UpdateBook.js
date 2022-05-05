@@ -58,7 +58,7 @@ const UpdateBook = () => {
     }
     return (
         <div>
-            <div className='m-6 border rounded-lg w-2/4 mx-auto grid grid-cols-1 lg:grid-cols-2  shadow-lg hover:shadow-2xl'>
+            <div className='m-6 border rounded-lg w-3/4 mx-auto grid grid-cols-1 lg:grid-cols-2  shadow-lg hover:shadow-2xl'>
                 <div className='flex justify-center'>
                     <img className=' rounded-t-lg hover:shadow-2xl' src={img} alt="" />
                 </div>
