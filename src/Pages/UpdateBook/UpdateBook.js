@@ -71,7 +71,7 @@ const UpdateBook = () => {
                     <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered</button>
                     <form onSubmit={addQuantity} className='mt-4'>
                         <input className='border py-1 rounded-l-lg' placeholder='Add Quantity' type="number" name='newQuantity' />
-                        <input type="submit" className='border text-white px-2 rounded-r-lg bg-green-600 py-1' value="Add Quantity" />
+                        <input type="submit" className='border text-white px-2 rounded-r-lg bg-green-600 py-1' value="Restock Item" />
                     </form>
 
                 </div>

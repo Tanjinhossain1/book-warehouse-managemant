@@ -22,7 +22,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
     const [stateUser] = useAuthState(auth);
-    console.log(stateUser)
+    // console.log(stateUser)
     if (user || googleUser) {
         fetch(`http://localhost:5000/login`, {
             method: 'POST',
@@ -34,8 +34,8 @@ const Login = () => {
             .then(res => res.json())
             .then(data => {
                 localStorage.setItem("token", data.token)
-                console.log(data)
-                // navigate(from)
+       
+                navigate(from)
             })
     }
 
@@ -81,7 +81,7 @@ const Login = () => {
                     <button onClick={resetPassword} className='flex justify-end text-purple-700 font-semibold mb-4'>Forgot Password?</button>
 
 
-                    {error?.message.slice(22, 42)}
+                   <p className='text-red-600 mb-2'> {error?.message.slice(22, 42)}</p>
                     {googleError?.message}
                     <input className=' shadow-style bg-purple-700 rounded-full w-3/4 mx-auto text-white font-semibold py-2 hover:text-black border-0 hover:bg-white' type="submit" value="Login" />
                 </form>

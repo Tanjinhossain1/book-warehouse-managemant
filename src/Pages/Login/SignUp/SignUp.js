@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Triangle } from 'react-loader-spinner';
 
 const SignUp = () => {
@@ -13,7 +13,8 @@ const SignUp = () => {
     const [updateProfile, updating,] = useUpdateProfile(auth);
     const [signInWithGoogle, googleUser, googleLoading] = useSignInWithGoogle(auth);
     const [sendEmailVerification] = useSendEmailVerification(auth);
-  
+    const [stateUser] = useAuthState(auth);
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -46,9 +47,21 @@ const SignUp = () => {
             <Triangle color="#00BFFF" height={80} width={80} />
         </div>
     }
- 
+
     if (user || googleUser) {
-        navigate(from)
+        fetch(`http://localhost:5000/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: stateUser?.email }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem("token", data.token)
+       
+                navigate(from)
+            })
     }
 
     return (
