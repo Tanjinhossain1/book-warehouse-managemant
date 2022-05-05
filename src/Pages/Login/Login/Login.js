@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Circles } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
 
 const Login = () => {
     const [email, setEmail] = useState('');
-    const [signInWithGoogle, googleUser, googleLoading,googleError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     const [
         signInWithEmailAndPassword,
@@ -21,8 +21,22 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
+    const [stateUser] = useAuthState(auth);
+    console.log(stateUser)
     if (user || googleUser) {
-        navigate(from)
+        fetch(`http://localhost:5000/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: stateUser?.email }),
+        })
+            .then(res => res.json())
+            .then(data => {
+                localStorage.setItem("token", data.token)
+                console.log(data)
+                // navigate(from)
+            })
     }
 
     const [open, setOpen] = useState(false);
@@ -37,11 +51,11 @@ const Login = () => {
         setEmail(event.target.value)
     }
     const resetPassword = () => {
-        if(email){
+        if (email) {
             sendPasswordResetEmail(email)
             toast('Reset Password Send Your Email')
-        }else{
-           toast('Enter Email First')
+        } else {
+            toast('Enter Email First')
         }
     }
     if (loading || googleLoading || sending) {

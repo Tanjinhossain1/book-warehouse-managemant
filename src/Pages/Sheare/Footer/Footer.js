@@ -5,7 +5,7 @@ const Footer = () => {
     const date = new Date();
     const year = date.getFullYear()
     return (
-        <div className='bg-[#021038] p-12 mb-12'>
+        <div className='bg-[#021038] p-12 mt-12'>
             <div className='grid text-white grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-3/4 mx-auto'>
                 <div className='mb-2'>
                     <h4 className='text-xl mb-2 text-gray-400 mt-2'>EXPLORE</h4>
