@@ -14,21 +14,31 @@
 .round {
   border-radius: 0 0 150% 150%/0 0 50% 50%;
 }
-@media only screen and (max-width: 1535px) {
+ /* @media only screen and (max-width: 1535px) {
   .eyeSmall{
     margin-left: 650px;
   }
-}
-@media only screen and (max-width: 1400px) {
+} */
+@media only screen and (min-width: 1395px) and (max-width: 1535px) {
   .eyeSmall{
-    margin-left: 585px;
+    margin-left: 270px;
   }
 }
-@media only screen and (max-width: 1293px) {
+@media only screen and (min-width: 1280px) and (max-width: 1394px) {
+  .eyeSmall{
+    margin-left: 260px;
+  }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1279px) {
+  .eyeSmall{
+    margin-left: 550px;
+  }
+}
+ /* @media only screen and (max-width: 1293px) {
   .eyeSmall{
     margin-left: 495px;
   }
-}
+}   */
 @media only screen and (max-width: 1200px) {
   .eyeSmall{
     margin-left: 485px;

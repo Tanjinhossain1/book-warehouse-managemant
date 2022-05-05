@@ -66,7 +66,7 @@ const SignUp = () => {
 
     return (
         <div className=''>
-            <div className='w-1/4 mx-auto border-2 border-green-500 rounded-lg p-4 my-5'>
+            <div className='lg:w-2/4 xl:w-1/4 2xl:w-1/4  md:w-3/4 w-3/4 sm:w-3/4 mx-auto border-2 border-green-500 rounded-lg p-4 my-5'>
                 <div>
                     <h1 className='text-2xl mb-4 font-semibold'>Create Account</h1>
 
@@ -80,13 +80,13 @@ const SignUp = () => {
                     <div className='flex flex-col mt-2 relative'>
                         <input className='border mb-2 px-1 py-1 w-4/4 ' type={`${open ? 'text' : 'password'}`} name="password" placeholder={`Password `} id="" required />
 
-                        {open ? <FontAwesomeIcon onClick={() => setOpen(!open)} className='absolute ml-[316px] mt-2 ' icon={faEye} /> : <FontAwesomeIcon onClick={() => setOpen(!open)} className='absolute ml-[316px] mt-2 ' icon={faEyeSlash} />}
+                        {open ? <FontAwesomeIcon onClick={() => setOpen(!open)} className='absolute ml-[316px] mt-2 eyeSmall' icon={faEye} /> : <FontAwesomeIcon onClick={() => setOpen(!open)} className='absolute ml-[316px] mt-2 eyeSmall ' icon={faEyeSlash} />}
                     </div>
                     <p className='text-red-600'>{passError}</p>
                     <div className='flex flex-col relative'>
                         <input className='border mb-6 px-1 py-1 w-4/4 ' type={`${confirmOpen ? 'text' : 'password'}`} name="confirmPassword" placeholder={`Confirm-Password `} id="" required />
 
-                        {confirmOpen ? <FontAwesomeIcon onClick={() => setConfirmOpen(!confirmOpen)} className='absolute ml-[316px] mt-2 ' icon={faEye} /> : <FontAwesomeIcon onClick={() => setConfirmOpen(!confirmOpen)} className='absolute ml-[316px] mt-2 ' icon={faEyeSlash} />}
+                        {confirmOpen ? <FontAwesomeIcon onClick={() => setConfirmOpen(!confirmOpen)} className='absolute ml-[316px] mt-2 eyeSmall' icon={faEye} /> : <FontAwesomeIcon onClick={() => setConfirmOpen(!confirmOpen)} className='absolute eyeSmall ml-[316px] mt-2 ' icon={faEyeSlash} />}
                     </div>
                     <p>{error?.message.slice(23,42)}</p>
                     <input className=' shadow-style bg-purple-700 rounded-full w-3/4 mx-auto text-white font-semibold py-2 hover:text-black border-0 hover:bg-white' type="submit" value="Sign Up" />
@@ -97,7 +97,9 @@ const SignUp = () => {
                     <p className='ml-11'>or</p>
                     <hr />
                 </div>
+                <div className='flex justify-center'>
                 <button onClick={()=>signInWithGoogle()} className=''><img className='shadow-2xl rounded-full mt-4 hover:bg-black' src="https://i.ibb.co/x8NkjXG/images-1-removebg-preview.png" alt="" /></button>
+                </div>
             </div>
         </div>
     );

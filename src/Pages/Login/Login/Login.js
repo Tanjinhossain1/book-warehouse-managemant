@@ -65,7 +65,7 @@ const Login = () => {
     }
     return (
         <div className=''>
-            <div className='lg:w-2/4 xl:w-2/4 2xl:w-1/4  md:w-3/4 w-3/4 sm:w-3/4 mx-auto border-2 border-purple-800 rounded-lg p-4 my-5'>
+            <div className='lg:w-2/4 xl:w-1/4 2xl:w-1/4  md:w-3/4 w-3/4 sm:w-3/4 mx-auto border-2 border-purple-800 rounded-lg p-4 my-5'>
                 <div>
                     <h1 className='text-2xl mb-4 font-semibold'>Login</h1>
 
