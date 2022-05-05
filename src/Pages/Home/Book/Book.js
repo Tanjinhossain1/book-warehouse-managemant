@@ -8,7 +8,7 @@ const Book = ({ book,children }) => {
            <div className='flex justify-center'>
                 <img className='w-[100%] h-[450px] rounded-t-lg hover:shadow-2xl' src={img} alt="" />
             </div>
-            <div className='p-4 '>
+            <div className='p-4 mb-4'>
                 <h4 className='text-blue-800 text-xl  font-semibold'> {name}</h4>
                 <p>Price: <span className='text-pink-600 font-semibold'>{price}$</span></p>
                 <p>Quantity: <span className='font-bold'> {quantity}</span></p>

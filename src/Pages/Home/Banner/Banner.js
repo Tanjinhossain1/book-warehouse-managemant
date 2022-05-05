@@ -7,7 +7,7 @@ const Banner = () => {
                 <div className='lg:w-3/4 sm:w-4/4  '>
                     <h1 className='text-blue-900 text-4xl font-semibold'>2022 Reading Challenge</h1>
                     <p className='text-yellow-700'>Want to get more out of your reading life in 2022? We've got a challenge just for you,and a free reading challenge kit to help you see it through. We care about quality way more than we.</p>
-                    <button className='border-1 py-2 px-6 bg-orange-500 rounded-3xl mt-4 text-white'>Learn More</button>
+                    <button className='border-1 py-2 px-6 bg-orange-500 rounded-3xl mt-4 text-white hover:bg-white hover:text-orange-600 font-semibold hover:border-orange-600'>Learn More</button>
                 </div>
                 <div>
                     <img src="https://i.ibb.co/XDZKq21/bookread-removebg.png" alt="" />
