@@ -24,7 +24,7 @@ const Login = () => {
     const [stateUser] = useAuthState(auth);
     // console.log(stateUser)
     if (user || googleUser) {
-        fetch(`http://localhost:5000/login`, {
+        fetch(`${process.env.REACT_APP_API_KEY}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

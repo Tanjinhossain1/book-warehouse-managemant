@@ -6,7 +6,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { CirclesWithBar } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
-import useBooks from '../../hooks/useBooks';
 import Book from '../Home/Book/Book';
 
 const MyItems = () => {
@@ -35,7 +34,7 @@ const MyItems = () => {
     const deleteBook = (id) => {
         const confirmDelete = window.confirm('Are You Sure To Delete It.')
         if (confirmDelete) {
-            fetch(`http://localhost:5000/deleteBook/${id}`, {
+            fetch(`${process.env.REACT_APP_API_KEY}/deleteBook/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

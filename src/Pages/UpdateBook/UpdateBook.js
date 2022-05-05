@@ -9,7 +9,7 @@ const UpdateBook = () => {
     const { name, price, img, description, quantity, supplierName, _id } = book;
     // console.log(books)
     useEffect(() => {
-        fetch(`http://localhost:5000/books/${id}`)
+        fetch(`${process.env.REACT_APP_API_KEY}/books/${id}`)
             .then(res => res.json())
             .then(data => setBook(data))
     }, [id])
@@ -25,7 +25,7 @@ const UpdateBook = () => {
         }
         const quantitys = book.quantity
 
-        fetch(`http://localhost:5000/books/${_id}`, {
+        fetch(`${process.env.REACT_APP_API_KEY}/books/${_id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ quantitys })
@@ -41,7 +41,7 @@ const UpdateBook = () => {
         const newQuantity = event.target.newQuantity.value;
         if (newQuantity > 0) {
             const addNewQuantity = +newQuantity + book.quantity;
-            fetch(`http://localhost:5000/bookNewQuantity/${_id}`, {
+            fetch(`${process.env.REACT_APP_API_KEY}/bookNewQuantity/${_id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ addNewQuantity })
@@ -53,7 +53,7 @@ const UpdateBook = () => {
                     event.target.reset()
                 })
         } else {
-        alert('minus quantity are not allow')
+            alert('minus quantity are not allow')
         }
     }
     return (
@@ -68,7 +68,7 @@ const UpdateBook = () => {
                     <p>Quantity: <span className=' font-bold'> {quantity}</span></p>
                     <p>Description: <small>{description}</small></p>
                     <p><small>SupplierName: {supplierName}</small></p>
-                    <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered <FontAwesomeIcon icon={faCircleMinus}/></button>
+                    <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered <FontAwesomeIcon icon={faCircleMinus} /></button>
                     <form onSubmit={addQuantity} className='mt-4'>
                         <input className='border py-1 rounded-l-lg' placeholder='Add Quantity' type="number" name='newQuantity' />
                         <input type="submit" className='border text-white px-2 rounded-r-lg bg-green-600 py-1' value='Restock Item' />

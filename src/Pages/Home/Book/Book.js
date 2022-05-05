@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Book = ({ book,children }) => {
-    const { name, price, img, description, quantity, supplierName,_id } = book;
+    const { name, price, img, description, quantity, supplierName} = book;
     return (
         <div className=' mx-auto  mb-6  relative border rounded-lg  shadow-lg hover:shadow-2xl w-3/4 sm:w-2/4 md:w-3/4 lg:w-4/4 xl:w-4/4 flex justify-center'>
            <div>

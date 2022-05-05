@@ -10,7 +10,7 @@ const AddNewItem = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data, event) => {
         console.log(data)
-        fetch('http://localhost:5000/books', {
+        fetch(`${process.env.REACT_APP_API_KEY}/books`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const AddNewItem = () => {
             {errors.description && <span className='text-red-600'>This field is required</span>}
 
             <input type="submit" className='mb-2 border  rounded-lg bg-blue-600 text-white font-semibold text-xl py-2  hover:bg-purple-500 hover:border-gray-600 duration-700 ease-in hover:text-black hover:font-semibold' value='Add Item' />
-           
+
         </form>
     );
 };
