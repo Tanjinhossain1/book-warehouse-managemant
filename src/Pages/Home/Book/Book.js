@@ -6,7 +6,7 @@ const Book = ({ book,children }) => {
         <div className=' mx-auto  mb-6  relative border rounded-lg  shadow-lg hover:shadow-2xl w-3/4 sm:w-2/4 md:w-3/4 lg:w-4/4 xl:w-4/4 flex justify-center'>
            <div>
            <div className='flex justify-center'>
-                <img className='w-[100%] h-[450px] rounded-t-lg hover:shadow-2xl' src={img} alt="" />
+                <img className='w-[100%] h-[500px] rounded-t-lg hover:shadow-2xl' src={img} alt="" />
             </div>
             <div className='p-4 mb-4'>
                 <h4 className='text-blue-800 text-xl  font-semibold'> {name}</h4>

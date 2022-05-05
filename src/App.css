@@ -20,6 +20,21 @@
   }
 } */
 
+@media only screen and (min-width: 2000px) and (max-width: 2200px) {
+  .eyeSmall{
+    margin-left: 500px;
+  }
+}
+@media only screen and (min-width: 1800px) and (max-width: 2000px) {
+  .eyeSmall{
+    margin-left: 400px;
+  }
+}
+@media only screen and (min-width: 1625px) and (max-width: 1800px) {
+  .eyeSmall{
+    margin-left: 350px;
+  }
+}
 @media only screen and (min-width: 1395px) and (max-width: 1535px) {
   .eyeSmall{
     margin-left: 270px;
