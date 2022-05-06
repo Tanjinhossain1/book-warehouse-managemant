@@ -65,7 +65,7 @@ const UpdateBook = () => {
                 <div className='p-4 '>
                     <h4 className='text-blue-800 text-xl  font-semibold'> {name}</h4>
                     <p>Price: <span className='text-pink-600 font-semibold'>{price}$</span></p>
-                    <p>Quantity: <span className=' font-bold'> {quantity}</span></p>
+                    <p>Quantity: <span className=' font-bold'> {quantity? quantity:'Stock Out'}</span></p>
                     <p>Description: <small>{description}</small></p>
                     <p><small>SupplierName: {supplierName}</small></p>
                     <button disabled={!quantity} onClick={deleteQuantity} className='py-3 mt-2 font-semibold px-8 rounded-3xl  bottom-0 bg-red-500 text-white'>Delivered <FontAwesomeIcon icon={faCircleMinus} /></button>
