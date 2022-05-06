@@ -8,6 +8,8 @@ import Book from '../Home/Book/Book';
 
 const ManageInventory = () => {
     const [books, setBooks] = useBooks();
+  
+
     const deleteBooks = (id) => {
         console.log(id)
         const confirmDelete = window.confirm('Are You Sure To Delete It.')
@@ -24,11 +26,14 @@ const ManageInventory = () => {
         }
 
     }
+    // set spinner 
     if (books.length === 0) {
         return <div className='flex justify-center my-32'>
             <Circles color="#00BFFF" height={80} width={80} />
         </div>
     }
+
+
     return (
         <div className=''>
             <h1 className='text-center text-3xl my-6 text-blue-700 font-semibold'>Manage Your Inventories</h1>
@@ -38,7 +43,6 @@ const ManageInventory = () => {
                     books.map((book) => <Book book={book} key={book._id}><button onClick={() => deleteBooks(book._id)} className='py-3 font-semibold px-8 rounded-3xl  bottom-2 bg-red-500 mt-4 text-white hover:border-red-700 delay-150 absolute hover:border  duration-700 ease-in-out  hover:bg-white hover:text-black'>Delete <FontAwesomeIcon className='ml-2' icon={faTrash} /></button></Book>)
                 }
             </div>
-
         </div>
     );
 };

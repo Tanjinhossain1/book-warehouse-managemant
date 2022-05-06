@@ -53,7 +53,7 @@ const UpdateBook = () => {
                     event.target.reset()
                 })
         } else {
-            alert('minus quantity are not allow')
+            alert('Add Valid Quantity')
         }
     }
     return (
