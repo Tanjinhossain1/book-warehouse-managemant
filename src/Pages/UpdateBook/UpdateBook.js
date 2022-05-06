@@ -60,7 +60,7 @@ const UpdateBook = () => {
         <div>
             <div className='m-6 border rounded-lg w-3/4 mx-auto grid grid-cols-1 lg:grid-cols-2  shadow-lg hover:shadow-2xl'>
                 <div className='flex justify-center'>
-                    <img className=' rounded-t-lg hover:shadow-2xl' src={img} alt="" />
+                    <img className='w-2/4 h-[400px] rounded-t-lg hover:shadow-2xl' src={img} alt="" />
                 </div>
                 <div className='p-4 '>
                     <h4 className='text-blue-800 text-xl  font-semibold'> {name}</h4>
