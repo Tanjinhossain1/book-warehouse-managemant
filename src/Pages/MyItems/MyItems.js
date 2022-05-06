@@ -49,7 +49,7 @@ const MyItems = () => {
         return <div className='flex justify-center my-32'>
             <div>
                 <CirclesWithBar color="#00BFFF" height={80} width={80} />
-                <p className='text-gray-400'>I Think You Dont Add Any Items</p>
+                <p className='text-gray-400'>Can You Add Any Item</p>
             </div>
         </div>
     }
